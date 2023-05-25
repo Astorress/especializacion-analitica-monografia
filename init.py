@@ -15,7 +15,7 @@ def get_last_modif_date(localdir):
     
 import requests, zipfile, io, os, shutil
 def init(force_download=False):
-    if force_download or not os.path.exists("local"):
+    if force_download or not os.path.exists("data"):
         print("replicating local resources")
         dirname = course_id+"-master/"
         if os.path.exists(dirname):
@@ -23,7 +23,7 @@ def init(force_download=False):
         r = requests.get(zip_file_url)
         z = zipfile.ZipFile(io.BytesIO(r.content))
         z.extractall()
-        if os.path.exists("local"):
+        if os.path.exists("data"):
             shutil.rmtree("local")
         shutil.move(dirname+"/local", "local")
         shutil.rmtree(dirname)
