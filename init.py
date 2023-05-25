@@ -24,6 +24,6 @@ def init(force_download=False):
         z = zipfile.ZipFile(io.BytesIO(r.content))
         z.extractall()
         if os.path.exists("data"):
-            shutil.rmtree("local")
-        shutil.move(dirname+"/local", "local")
+            shutil.rmtree("data")
+        shutil.move(dirname+"/data", "data")
         shutil.rmtree(dirname)
