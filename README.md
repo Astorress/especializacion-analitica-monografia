@@ -1,4 +1,4 @@
-# **PREDICIÓN DE LA DEMANDA DE ENERGÍA ELÉCTRICA EN ANTIOQUIA**
+# **PREDICCIÓN DE LA DEMANDA DE ENERGÍA ELÉCTRICA EN ANTIOQUIA**
 
 - [Resumen](#resumen)
 - [Descripción del repositorio](#descripción-del-repositorio)
