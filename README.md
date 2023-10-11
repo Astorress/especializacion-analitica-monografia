@@ -9,11 +9,13 @@
 - [Forma de usar los notebooks](#forma-de-usar-los-notebooks)
 
 ---
+
 # **Resumen**
 
 Este repositorio contiene los notebooks, data y documentos relacionados con el proyecto de monografía de la especialización en analítica y ciencia de la Universidad de Antioquia.
 
 ---
+
 # **Descripción del repositorio**
 
 ## **data**
@@ -21,10 +23,6 @@ Este repositorio contiene los notebooks, data y documentos relacionados con el p
 En esta carpeta se encuentran todos los datos utilizados en este proyecto, dicha información está organizada de la siguiente forma:
 
 - `consumo`: En esta carpeta se encuentra la información del consumo o demanda de energía eléctrica en las distintas regiones del país categorizadas por XM, esta información se encuentra en un archivo .xlsx.
-
-- `geo`: En esta carpeta se encuentra toda la información de las geolocalizaciones de las ciudades del país, usada para gráficos de mapas en los notebooks y documentos del proyecto, esta información se encuentran en formatos .xlsx y .csv.
-
-- `info_api_xm`: En esta carpeta se encuentra la información guía para entender las diversas métricas, agentes, recursos, etc., que se encuentran en la API de XM, con dicha información se pueden encontrar relaciones y simular un diagrama relacional completo entre las métricas, recursos, métricas, etc. Esta información se usó para entender más a fondo la información del API, esta información se encuentra en formato .xlsx.
 
 - `temperatura`: En esta carpeta se encuentra la información de las temperaturas promedio del departamento de Antioquia en los últimos años, esta información se usó para poder incluir en las predicciones de la demanda de energía eléctrica la temperatura promedio diaria del departamento, esta información fue extraída del API de Socrata, que se conecta con la plataforma de datos abiertos del gobierno Colombiano (<https://www.datos.gov.co/>). Debido a que dicha API tiene un alto coste de tiempo de ejecución, para la extracción de los datos, se decidió guardar los mismos, en un formato .csv para agilizar los tiempos de ejecución de los notebooks.
 
@@ -34,23 +32,22 @@ En esta carpeta se encuentran todos los datos utilizados en este proyecto, dicha
 
 En esta carpeta se encuentran los notebooks usados en el proyecto.
 
-- `extraccion_procesamiento_y_limpieza_datos.ipynb`: En este notebook se encuentra todo el proceso de extracción, limpieza y preparación de datos utilizados en el proyecto.
+- `1_extraccion_procesamiento_y_limpieza_datos.ipynb`:
 
-- `analisis_datos_y_generacion_modelos.ipynb`: En este notebook se encuentra todo el proceso de análisis de datos, análisis exploratorio y generación de modelos utilizados en el proyecto.
+- `2_analisis_series_tiempo.ipynb`:
+
+- `3_prediccion_series_tiempo_iniciales.ipynb`:
 
 ## **docs**
 
 En esta carpeta se encuentran los dos archivos .pdf de las dos entregas realizadas en el proyecto de seminario para la monografía.
-
-- `entrega_1.pdf`: Este .pdf contiene la propuesta inicial planteada para el proyecto de monografía.
-
-- `entrega_2.pdf`: Ese .pdf contiene los resultados de los primeros modelos realizados para el proyecto de monografía, así como la explicación del proceso de extracción, limpieza y procesamiento de datos.
 
 ## **init.py**
 
 Este script fue creado con el objetivo de realizar la conexión del este repositorio con los notebooks, haciendo así que toda la información almacenada en la carpeta **data** sea importada a los notebooks de forma automática y sin la necesidad de depender de archivos externos.
 
 ---
+
 # **Forma de usar los notebooks**
 
 Lo primero que se debe mencionar, es que este proyecto de ejecutarse de forma obligatoria en `Google Colab`, debido a que se usan algunos comando de terminal que ejecutan en esta herramienta y haciendo que en otro tipo de herramientas tenga otra forma de uso.
