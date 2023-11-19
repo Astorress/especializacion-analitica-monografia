@@ -22,25 +22,27 @@ Este repositorio contiene los notebooks, data y documentos relacionados con el p
 
 En esta carpeta se encuentran todos los datos utilizados en este proyecto, dicha información está organizada de la siguiente forma:
 
-- `consumo`: En esta carpeta se encuentra la información del consumo o demanda de energía eléctrica en las distintas regiones del país categorizadas por XM, esta información se encuentra en un archivo .xlsx.
+- `consumo`: En esta carpeta se encuentra la información del consumo o demanda de energía eléctrica horaria en la región de Antioquia, esta información fue extraída del API de XM, el ente regulador del mercado de energía eléctrica. Eesta información se encuentra en un archivo llamado `demanda_comercial.csv`.
 
-- `temperatura`: En esta carpeta se encuentra la información de las temperaturas promedio del departamento de Antioquia en los últimos años, esta información se usó para poder incluir en las predicciones de la demanda de energía eléctrica la temperatura promedio diaria del departamento, esta información fue extraída del API de Socrata, que se conecta con la plataforma de datos abiertos del gobierno Colombiano (<https://www.datos.gov.co/>). Debido a que dicha API tiene un alto coste de tiempo de ejecución, para la extracción de los datos, se decidió guardar los mismos, en un formato .csv para agilizar los tiempos de ejecución de los notebooks.
+- `temperatura`: En esta carpeta se encuentra la información de las temperaturas promedio, maxima y mediana horaria del departamento de Antioquia, esta información fue extraída del API de Socrata, que se conecta con la plataforma de datos abiertos del gobierno Colombiano (<https://www.datos.gov.co/>). Esta información se encuentraun archivo llamado `temperaturas.csv`.
 
-- `data_procesada.csv`: Este es el resultado del proceso de limpieza y preparación de datos realizado en el notebook _`extraccion_procesamiento_y_limpieza_datos.ipynb`_, con el objetivo de separar el proyecto en dos notebooks, un destinado a la etapa de procesamiento de datos y otro a la etapa de análisis y generación de modelos, agilizando de esta forma los tiempos de ejecución en la etapa de análisis y generación de modelos.
+- `data_procesada.csv`: Este es el resultado del proceso de limpieza y preparación de datos realizado en el notebook `1_extraccion_procesamiento_y_limpieza_datos.ipynb`, en donde se unieron las bases de datos antes mencionadas.
 
 ## **notebooks**
 
 En esta carpeta se encuentran los notebooks usados en el proyecto.
 
-- `1_extraccion_procesamiento_y_limpieza_datos.ipynb`:
+- `1_extraccion_procesamiento_y_limpieza_datos.ipynb`: En este notebook se realiza el proceso de extración de los datos de la APIs de XM y Socrata, y la posterior unión de las bases de datos. Además, se realiza un proceso de limpieza de datos eliminando datos atipicos, imputación de datos faltantes, etc.
 
-- `2_analisis_series_tiempo.ipynb`:
+- `2_analisis_series_tiempo.ipynb`: En este notebook se realiza un el analisis de datos, en donde se usan metodos de analisis de datos de series de tiempo, como graficos de autocorrelacion, desomposición estacional, etc.
 
-- `3_prediccion_series_tiempo_iniciales.ipynb`:
+- `3_predicción_serie_tiempo_iniciales.ipynb`: En este notebook se realizan las primera iteraciones de los modelos de predicción, en este se encuentran modelos como ARIMA, SARIMAX, Linear Regressor Autorregresive, Random Forest Autorregresive y RNN LSTM.
+
+- `4_predicción_serie_tiempo_ajuste_hiperparametros.ipynb`: En este notebook se realizan los ajustes de hiperparametros y predicciones de los modelos como ARIMA, SARIMAX, Random Forest Autorregresive y RNN LSTM.
 
 ## **docs**
 
-En esta carpeta se encuentran los dos archivos .pdf de las dos entregas realizadas en el proyecto de seminario para la monografía.
+En esta carpeta se encuentran los un archivo llamado `TorresAnderson_2023_PrediccionDemandaEnergiaElectrica.pdf` con el documento escrito con las explicaciones y resultados de los procesos y modelos para este trabajo de monografía.
 
 ## **init.py**
 
